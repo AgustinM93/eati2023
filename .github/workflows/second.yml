@@ -20,7 +20,7 @@ jobs:
            steps:
                 - name: 'Step 2do job'
                   run: Get-Command
-     job3:
+    job3:
            needs: [ job1,job2]
            name: 'Mi tercer Job'
            runs-on: ubuntu-latest
