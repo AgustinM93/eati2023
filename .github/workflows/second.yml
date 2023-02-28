@@ -1,0 +1,44 @@
+name: second
+
+on: 
+   
+   push:
+     branches: [ "workflows2" ]
+     
+jobs:
+    job1:
+           name: 'Mi primer Job'
+           runs-on: ubuntu-18.04
+           steps:
+              - uses: actions/checkout@v3
+              
+              - name: 'Mi primer steps'
+                run: python eati.py Workflow dependencies
+    job2:
+           name: 'Mi segundo Job'
+           runs-on: windows-2022
+           steps:
+                - name: 'Step 2do job'
+                  run: Get-Command
+     job3:
+           needs: [ job1,job2]
+           name: 'Mi tercer Job'
+           runs-on: ubuntu-latest
+           steps:
+                - name: 'Step 3er job'
+                  run: env
+    job4:
+           name: 'Mi cuarto Job'
+           runs-on: ubuntu-latest
+           steps:
+                - name: 'Step 4to job'
+                  run: cat /etc/*release
+    job5:
+           needs: [ job3,job4]
+           name: 'Mi quinto Job'
+           runs-on: ubuntu-latest
+           steps:
+                - name: 'Step 4to job'
+                  run: echo "Fin workflow"
+                
+           
