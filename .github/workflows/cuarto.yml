@@ -12,13 +12,13 @@ jobs:
        runs-on: ubuntu-latest
        env:
          JOB_VARIABLE: 'hola'
-         SCOPE: 'Juan' 
+         SCOPE: 'Juan'
        steps:
-          env:
-            STEP_VARIABLE: 'Carlos'
-            SCOPE: 'pedro'
                     
           - name: 'Mi primer steps'
+            env:
+              STEP_VARIABLE: 'Carlos'
+              SCOPE: 'pedro'
             run: |
                 echo "Variable del workflow : ${{ env.WORKFLOW_VARIABLE }}"
                 echo "Variable del job : ${{ env.JOB_VARIABLE }}"
