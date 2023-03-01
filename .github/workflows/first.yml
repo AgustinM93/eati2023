@@ -1,8 +1,9 @@
 name: first
 
 # Controls when the workflow will run
-on: [ "push" ]
-
+on:
+     push:
+         branches: [ "main" ]
 
 jobs:
      job1:
