@@ -24,9 +24,10 @@ jobs:
                 echo "Variable del step : ${{ env.STEP_VARIABLE }}"
                      
           - name: 'Mi segundo step'
-            run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
+            run: echo "Valor de SCOPE :${{ env.SCOPE }}"
     job2:
-        name: 'Mi segundo job'
-        steps:
+         name: 'Mi segundo job'
+         runs-on: ubuntu-latest
+         steps:
           - name: 'Primer step del 2do job'
-            run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
+            run: echo "Valor de SCOPE :${{ env.SCOPE }}"
