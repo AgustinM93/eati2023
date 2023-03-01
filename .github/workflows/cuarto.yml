@@ -12,11 +12,11 @@ jobs:
        runs-on: ubuntu-latest
        env:
          JOB_VARIABLE: 'hola'
-         SCOPE: ${{ env.JOB_VARIABLE }}  
+         SCOPE: 'Juan' 
        steps:
            env:
             STEP_VARIABLE: 'Carlos'
-            SCOPE: ${{ env.STEP_VARIABLE }}
+            SCOPE: 'pedro'
                     
            - name: 'Mi primer steps'
              run: |
