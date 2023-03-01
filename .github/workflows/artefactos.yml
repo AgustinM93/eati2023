@@ -33,5 +33,7 @@ jobs:
       - name: "llamando al ls"
         run: ls
 
+      - name: "ejecutando el programa"
+        run: echo ./main
         
       
