@@ -14,20 +14,20 @@ jobs:
          JOB_VARIABLE: 'hola'
          SCOPE: 'Juan' 
        steps:
-           env:
+          env:
             STEP_VARIABLE: 'Carlos'
             SCOPE: 'pedro'
                     
-           - name: 'Mi primer steps'
-             run: |
+          - name: 'Mi primer steps'
+            run: |
                 echo "Variable del workflow : ${{ env.WORKFLOW_VARIABLE }}"
                 echo "Variable del job : ${{ env.JOB_VARIABLE }}"
                 echo "Variable del step : ${{ env.STEP_VARIABLE }}"
                      
-           - name: 'Mi segundo step'
-             run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
+          - name: 'Mi segundo step'
+            run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
     job2:
-       name: 'Mi segundo job'
-       steps:
+        name: 'Mi segundo job'
+        steps:
           - name: 'Primer step del 2do job'
             run: echo "Valor de SCOPE : ${{ env.SCOPE }}"   

@@ -2,7 +2,7 @@ name: tercero
 
 on: 
      push:
-            branches: [ "workflows3" ]
+            branches: [ "main" ]
             
 jobs:
     job1:
