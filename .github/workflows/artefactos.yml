@@ -1,0 +1,24 @@
+name: artefactos
+
+on: 
+     push:
+            branches: [ "workflows5" ]
+            
+jobs:
+    job1:
+           name: 'Mi primer Job del 5to workflow'
+           runs-on: ubuntu-latest
+           steps:
+              - uses: actions/checkout@v3
+                with:
+                     repository: jmoyano/cautious-meme
+                     ref: main
+                     
+              - name: 'Mi primer steps job1'
+                run: gcc main.c -o main
+                
+              - name: 'subida del archivo'
+              - uses: actions/upload-artifact@v3
+                 with:
+                    name: salida
+                    path: ./main

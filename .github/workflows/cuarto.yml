@@ -5,7 +5,7 @@ env:
   SCOPE: Lunes
 on:
     push:
-       branches: [ "workflows3" ]        
+       branches: [ "main" ]        
 jobs:
     job1:
        name: 'Mi primer Job del 4to workflow'
