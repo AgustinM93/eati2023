@@ -22,6 +22,7 @@ jobs:
           name: salida
           path: main
   job2:
+    needs: [ job1 ]
     name: "test"
     runs-on: ubuntu-latest
     steps:
