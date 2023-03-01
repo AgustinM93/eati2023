@@ -14,7 +14,6 @@ jobs:
          JOB_VARIABLE: 'hola'
          SCOPE: 'Juan'
        steps:
-                    
           - name: 'Mi primer steps'
             env:
               STEP_VARIABLE: 'Carlos'
@@ -30,4 +29,4 @@ jobs:
         name: 'Mi segundo job'
         steps:
           - name: 'Primer step del 2do job'
-            run: echo "Valor de SCOPE : ${{ env.SCOPE }}"   
+            run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
