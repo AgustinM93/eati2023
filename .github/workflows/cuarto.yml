@@ -5,31 +5,29 @@ env:
   SCOPE: Lunes
 on:
     push:
-       branches: [ "workflows3" ]
-            
+       branches: [ "workflows3" ]        
 jobs:
     job1:
-         name: 'Mi primer Job del 4to workflow'
-         runs-on: ubuntu-latest
-         env:
-           JOB_VARIABLE: 'hola'
-           SCOPE: ${{ env.JOB_VARIABLE }}  
-         steps:
-             env:
-               STEP_VARIABLE: 'Carlos'
-               SCOPE: ${{ env.STEP_VARIABLE }}
+       name: 'Mi primer Job del 4to workflow'
+       runs-on: ubuntu-latest
+       env:
+         JOB_VARIABLE: 'hola'
+         SCOPE: ${{ env.JOB_VARIABLE }}  
+       steps:
+           env:
+            STEP_VARIABLE: 'Carlos'
+            SCOPE: ${{ env.STEP_VARIABLE }}
                     
-              - name: 'Mi primer steps'
-                run: |
-                     echo "Variable del workflow : ${{ vars.WORKFLOW_VARIABLE }}"
-                     echo "Variable del job : ${{ vars.JOB_VARIABLE }}"
-                     echo "Variable del step : ${{ vars.STEP_VARIABLE }}"
+           - name: 'Mi primer steps'
+             run: |
+                echo "Variable del workflow : ${{ env.WORKFLOW_VARIABLE }}"
+                echo "Variable del job : ${{ env.JOB_VARIABLE }}"
+                echo "Variable del step : ${{ env.STEP_VARIABLE }}"
                      
-              - name: 'Mi segundo step'
-                run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
+           - name: 'Mi segundo step'
+             run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
     job2:
-         name: 'Mi segundo job'
-         steps:
-            - name: 'Primer step del 2do job'
-              run: echo "Valor de SCOPE : ${{ env.SCOPE }}"
-                
+       name: 'Mi segundo job'
+       steps:
+          - name: 'Primer step del 2do job'
+            run: echo "Valor de SCOPE : ${{ env.SCOPE }}"   
