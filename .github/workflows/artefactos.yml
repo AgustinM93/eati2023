@@ -33,7 +33,10 @@ jobs:
       - name: "llamando al ls"
         run: ls
 
-      #- name: "ejecutando el programa"
-      # run: ./main
+      - name: "dar permisos para que pueda correr main"
+        run: chmod 777 main
+      - name: "correr el programa"
+        run: ./main
+        
 
       
