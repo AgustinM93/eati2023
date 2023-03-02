@@ -38,7 +38,7 @@ jobs:
       - name: "correr el programa"
         run: ./main
       - name: "chekeo de la ejecucion"
-        if: echo $? == 0
-        run: echo "ÉXITO"
+        if: ${{ echo $? == 0 }}
+        run: echo "Éxito"
 
       
