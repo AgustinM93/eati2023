@@ -38,6 +38,7 @@ jobs:
       - name: "correr el programa"
         run: ./main
       - name: "chekeo de la ejecucion"
-        run: echo $?
+        if: echo $? == 0
+        run: echo "ÉXITO"
 
       
