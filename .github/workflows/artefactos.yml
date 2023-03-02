@@ -37,6 +37,7 @@ jobs:
         run: chmod 777 main
       - name: "correr el programa"
         run: ./main
-        
+      - name: "chekeo de la ejecucion"
+        run: echo $?
 
       
